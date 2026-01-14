@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Project Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .login-container {
+            width: 400px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+        }
+
+        /* Stylish Login Button */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #764ba2;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none; /* Anchor tag ke liye */
+            display: block; /* Poore area ko clickable banane ke liye */
+        }
+
+        .login-btn:hover {
+            background: #764ba2;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        #error-msg {
+            color: #ff4d4d;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Developer Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Hariom" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Pandey@2003" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login to Portfolio</button>
+            
+            <p id="error-msg"></p>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            // Agar ID 'Hariom' aur Password 'Pandey@2003' hai
+            if (user === "Hariom" && pass === "Pandey@2003") {
+                // Yeh line aapko Portfolio page (index.html) par bhej degi
+                window.location.href = "https://hariompandey1234.github.io/To-Do-List/"; 
+            } else {
+                errorMsg.innerText = "Galti hai! Sahi ID/Password daalein.";
+            }
+        });
+    </script>
+</body>
+</html>
